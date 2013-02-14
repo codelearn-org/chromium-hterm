@@ -1,0 +1,12 @@
+{
+  "name": "Chromium OS Iteration Viewer",
+  "version": "1.0",
+  "description": "Shows the current Chromium OS Iteration when looking at the issue tracker.",
+  "update_url": "http://adlr.info/appcasts/chromium_iteration.xml",
+  "page_action": {
+  },
+  "background_page": "test.html",
+  "permissions": [
+    "tabs"
+  ]
+}
