@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <title>test</title>
-
-<script type="text/javascript" charset="utf-8">
+// Copyright (c) 2013 The Chromium OS Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
 
 var cSize = 19;
 
@@ -27,7 +23,7 @@ function checkForValidUrl(tabId, changeInfo, tab) {
       showingTabs.push(tab.id);
     }
     if (!running) {
-      setTimeout("UpdateAll();", timeLimit);
+      setTimeout(function() { UpdateAll(); }, timeLimit);
       running = true;
     }
   } else {
@@ -72,7 +68,8 @@ function drawCorner(ctx, cornerX, cornerY, endX, endY) {
   ctx.fillStyle = "rgba(255, 255, 255, 255)";
   ctx.moveTo(cornerX, cornerY);
   ctx.lineTo(cornerX, endY);
-  ctx.bezierCurveTo(cornerX, endY/3 + cornerY * 2 / 3, endX/3 + cornerX * 2 / 3, cornerY, endX, cornerY);
+  ctx.bezierCurveTo(cornerX, endY/3 + cornerY * 2 / 3, endX/3 + cornerX * 2 / 3,
+                    cornerY, endX, cornerY);
   ctx.lineTo(cornerX, cornerY);
   ctx.fill();
 }
@@ -90,11 +87,11 @@ function updateCanvas() {
   // var topSide = 3;
   // ctx.fillRect(topSide, 1, cSize - 2 * topSide, 1);
 
-  
+
   ctx.fillStyle = "#008000";
   ctx.fillRect(0, topSize, cSize, cSize - topSize);
-  
-  ctx.font="bold 10pt Open Sans, sans-serif";
+
+  ctx.font = "bold 11pt Open Sans, sans-serif";
   ctx.fillStyle = "rgb(255, 255, 255)";
   ctx.shadowColor = "#000000";
   ctx.shadowOffsetX = 1;
@@ -103,11 +100,11 @@ function updateCanvas() {
   var iter = getIter();
   var intIter = Math.floor(iter);
   var progress = iter - intIter;
-  ctx.fillText("" + intIter, 2, 13);
+  ctx.fillText("" + intIter, 2, cSize * .8);
   ctx.shadowOffsetX = 0;
   ctx.shadowOffsetX = 0;
   ctx.shadowBlur = 0;
-  
+
   ctx.fillStyle = "rgb(0, 192, 0)";
   ctx.fillRect(0, cSize - 2, cSize * progress, 2);
   sz = 4;
@@ -116,11 +113,3 @@ function updateCanvas() {
   drawCorner(ctx, 0, cSize, sz, cSize - sz);
   drawCorner(ctx, cSize, cSize, cSize - sz, cSize - sz);
 }
-
-</script>
-
-</head>
-<body id="test" onload="javascript:updateCanvas()">
-  <canvas id="canvas" width="19" height="19"></canvas>
-</body>
-</html>
