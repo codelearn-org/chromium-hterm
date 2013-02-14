@@ -21,7 +21,7 @@ function checkForValidUrl(tabId, changeInfo, tab) {
     updateCanvas();
     var ctx = document.getElementById("canvas").getContext("2d");
     var imageData = ctx.getImageData(0, 0, cSize, cSize);
-    chrome.pageAction.setIcon({tabId:tab.id, imageData:imageData});
+    chrome.pageAction.setIcon({"tabId":tab.id, "imageData":imageData});
     chrome.pageAction.show(tabId);
     if (showingTabs.indexOf(tab.id) < 0) {
       showingTabs.push(tab.id);
@@ -43,7 +43,7 @@ function UpdateAll() {
   var ctx = document.getElementById("canvas").getContext("2d");
   var imageData = ctx.getImageData(0, 0, cSize, cSize);
   for (var i = 0, e = showingTabs.length; i < e; i++) {
-    chrome.pageAction.setIcon({tabId:showingTabs[i], imageData:imageData});
+    chrome.pageAction.setIcon({"tabId":showingTabs[i], "imageData":imageData});
   }
   setTimeout("UpdateAll();", timeLimit);
 }
