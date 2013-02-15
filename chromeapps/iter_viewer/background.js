@@ -90,7 +90,7 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
       alarms.forEach(function(alarm) {
         var tabId = alarmNameToTabId(alarm.name);
         chrome.tabs.get(tabId, function(tab) {
-          if (typeof(tab) == "undefined") {
+          if (typeof(tab) == 'undefined') {
             console.log('OK to ignore previous error related to tab ' + tabId);
             chrome.alarms.clear(alarm.name);
           }
@@ -108,7 +108,7 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
    * future clean ourselves up.
    */
   chrome.tabs.get(tabId, function(tab) {
-    if (typeof(tab) == "undefined") {
+    if (typeof(tab) == 'undefined') {
       /*
        * We could use chrome.windows.getAll and walk all ids ourself, but
        * why bother when this is a lot less code and few people look at
@@ -148,16 +148,16 @@ function getIter() {
 
 function setIcon(tabId) {
   updateCanvas();
-  var canvas = document.getElementById("canvas")
-  var ctx = canvas.getContext("2d");
+  var canvas = document.getElementById('canvas')
+  var ctx = canvas.getContext('2d');
   var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  chrome.pageAction.setIcon({"tabId":tabId, "imageData":imageData});
+  chrome.pageAction.setIcon({'tabId':tabId, 'imageData':imageData});
   chrome.pageAction.show(tabId);
 }
 
 function drawCorner(ctx, cornerX, cornerY, endX, endY) {
   ctx.beginPath();
-  ctx.fillStyle = "rgba(255, 255, 255, 255)";
+  ctx.fillStyle = 'rgba(255, 255, 255, 255)';
   ctx.moveTo(cornerX, cornerY);
   ctx.lineTo(cornerX, endY);
   ctx.bezierCurveTo(cornerX, endY/3 + cornerY * 2 / 3, endX/3 + cornerX * 2 / 3,
@@ -167,36 +167,36 @@ function drawCorner(ctx, cornerX, cornerY, endX, endY) {
 }
 
 function updateCanvas() {
-  var canvas = document.getElementById("canvas");
+  var canvas = document.getElementById('canvas');
   if (!canvas.getContext)
     return;
-  var ctx = canvas.getContext("2d");
+  var ctx = canvas.getContext('2d');
 
   var topSize = 0;
-  ctx.fillStyle = "rgba(0, 51, 0, 255)";
+  ctx.fillStyle = 'rgba(0, 51, 0, 255)';
   ctx.fillRect(0, 0, canvas.width, topSize);
-  // ctx.fillStyle = "rgba(208, 208, 208, 0.8)";
+  // ctx.fillStyle = 'rgba(208, 208, 208, 0.8)';
   // var topSide = 3;
   // ctx.fillRect(topSide, 1, canvas.width - 2 * topSide, 1);
 
-  ctx.fillStyle = "#008000";
+  ctx.fillStyle = '#008000';
   ctx.fillRect(0, topSize, canvas.width, canvas.height - topSize);
 
-  ctx.font = "bold 11pt Open Sans, sans-serif";
-  ctx.fillStyle = "rgb(255, 255, 255)";
-  ctx.shadowColor = "#000000";
+  ctx.font = 'bold 11pt Open Sans, sans-serif';
+  ctx.fillStyle = 'rgb(255, 255, 255)';
+  ctx.shadowColor = '#000000';
   ctx.shadowOffsetX = 1;
   ctx.shadowOffsetX = 1;
   ctx.shadowBlur = 1;
   var iter = getIter();
   var intIter = Math.floor(iter);
   var progress = iter - intIter;
-  ctx.fillText("" + intIter, 2, canvas.height * .8);
+  ctx.fillText('' + intIter, 2, canvas.height * .8);
   ctx.shadowOffsetX = 0;
   ctx.shadowOffsetX = 0;
   ctx.shadowBlur = 0;
 
-  ctx.fillStyle = "rgb(0, 192, 0)";
+  ctx.fillStyle = 'rgb(0, 192, 0)';
   ctx.fillRect(0, canvas.height - 2, canvas.width * progress, 2);
   sz = 4;
   drawCorner(ctx, 0, 0, sz, sz);
