@@ -198,7 +198,7 @@ function updateCanvas() {
 
   ctx.fillStyle = 'rgb(0, 192, 0)';
   ctx.fillRect(0, canvas.height - 2, canvas.width * progress, 2);
-  sz = 4;
+  var sz = 4;
   drawCorner(ctx, 0, 0, sz, sz);
   drawCorner(ctx, canvas.width, 0, canvas.width - sz, sz);
   drawCorner(ctx, 0, canvas.height, sz, canvas.height - sz);
