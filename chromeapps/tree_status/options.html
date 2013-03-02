@@ -47,6 +47,7 @@ body {
   margin-top:4em;
 }
 </style>
+<script src='options.js'></script>
 </head>
 <body>
 
@@ -55,46 +56,12 @@ body {
 <div class="section-header first">Custom URL</div>
 <p>To use the Build Status Checker checker with a different URL than default, enter the domain here.
 <p>
-URL for the Waterfall (url to browse to):  <input type="text" id="custom-waterfall" oninput="markDirty()"><br/>
-URL for the inner frame containing tree status  <input type="text" id="custom-status" oninput="markDirty()"><br/>
+URL for the Waterfall (url to browse to):  <input type="text" id="custom-waterfall"><br/>
+URL for the inner frame containing tree status  <input type="text" id="custom-status"><br/>
 <div id="footer">
-  <button id="save-button" style="font-weight:bold" onclick="save()"
-    >Save</button>
-  <button onclick="init()">Cancel</button>
+  <button id="save-button" style="font-weight:bold">Save</button>
+  <button id="cancel-button">Cancel</button>
 </div>
 
-<script>
-var customStatusTextbox;
-var customWaterfallTextbox;
-var saveButton;
-
-init();
-
-function init() {
-  customStatusTextbox = document.getElementById("custom-status");
-  customWaterfallTextbox = document.getElementById("custom-waterfall");
-  saveButton = document.getElementById("save-button");
-
-  customStatusTextbox.value = localStorage.customStatus || "";
-  customWaterfallTextbox.value = localStorage.customWaterfall || "";
-  markClean();
-}
-
-function save() {
-  localStorage.customStatus = customStatusTextbox.value;
-  localStorage.customWaterfall = customWaterfallTextbox.value;
-  markClean();
-
-  chrome.extension.getBackgroundPage().init();
-}
-
-function markDirty() {
-  saveButton.disabled = false;
-}
-
-function markClean() {
-  saveButton.disabled = true;
-}
-</script>
 </body>
 </html>
