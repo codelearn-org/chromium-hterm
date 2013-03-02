@@ -238,8 +238,14 @@ function drawIconAtRotation() {
 }
 
 function goToWaterfall() {
+  var wurl = waterfallUrl();
+
+  if (localStorage.onClickBehavior != "reuse") {
+    chrome.tabs.create({url: wurl});
+    return;
+  }
+
   chrome.tabs.getAllInWindow(undefined, function(tabs) {
-    var wurl = waterfallUrl();
     for (var i = 0, tab; tab = tabs[i]; i++) {
       if (tab.url && tab.url == wurl) {
         chrome.tabs.update(tab.id, {url: tab.url, selected: true}, null);
