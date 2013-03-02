@@ -17,5 +17,5 @@
   "permissions": [
     "tabs", "http://chromiumos-status.appspot.com/", "http://build.chromium.org/"
    ],
-  "version": "3.4"
+  "version": "3.5"
 }
