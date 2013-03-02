@@ -26,7 +26,7 @@ function getChromeBuildUrl() {
 }
 
 function waterfallUrl() {
-  url = "http://build.chromium.org/buildbot/chromiumos/waterfall";
+  url = "http://build.chromium.org/p/chromiumos/waterfall";
   if (localStorage.customWaterfall)
     url = localStorage.customWaterfall;
   return url;
