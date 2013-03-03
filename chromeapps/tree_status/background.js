@@ -15,7 +15,9 @@ var requestFailureCount = 0;  // used for exponential backoff
 var requestTimeout = 1000 * 2;  // 5 seconds
 var rotation = 0;
 var treeStatus = -1;
-var loadingAnimation = new LoadingAnimation();
+var loadingAnimation = null;
+// Debug code
+// loadingAnimation = new LoadingAnimation();
 var statusTimeoutId = null;
 
 function getChromeBuildUrl() {
@@ -52,6 +54,8 @@ LoadingAnimation.prototype.paintFrame = function() {
   this.current_++;
   if (this.current_ == this.maxCount_)
     this.current_ = 0;
+
+  chrome.browserAction.setBadgeText({ text: text });
 }
 
 LoadingAnimation.prototype.start = function() {
@@ -70,6 +74,8 @@ LoadingAnimation.prototype.stop = function() {
 
   window.clearInterval(this.timerId_);
   this.timerId_ = 0;
+
+  chrome.browserAction.setBadgeText({ text: '' });
 }
 
 function init() {
@@ -81,7 +87,6 @@ function init() {
 
   chrome.browserAction.setBadgeBackgroundColor({color:[208, 0, 24, 255]});
   chrome.browserAction.setIcon({path: "tree_is_unknown.png"});
-  loadingAnimation.start();
 
   startRequest();
 }
@@ -101,14 +106,19 @@ function scheduleRequest() {
 
 // ajax stuff
 function startRequest() {
+  if (loadingAnimation)
+    loadingAnimation.start();
+
   getTreeState(
     function(tstatus, message) {
-      loadingAnimation.stop();
+      if (loadingAnimation)
+        loadingAnimation.stop();
       updateTreeStatus(tstatus, message);
       scheduleRequest();
     },
     function() {
-      loadingAnimation.stop();
+      if (loadingAnimation)
+        loadingAnimation.stop();
       showTreeUnknown();
       scheduleRequest();
     }
