@@ -1,3 +1,4 @@
+﻿
 Prebieha čistenie...
 
-K vyčisteniu dôjde, keď systém rozpozná kritické chyby alebo keď zariadenie obnovíte. Systém Chrome OS bude po vyčistení opäť ako nový. O chvíľu budete môcť pokračovať v práci.
+K vyčisteniu dôjde, keď systém rozpozná kritické chyby alebo keď zariadenie obnovíte. Vykonaním tejto akcie sa systém Chrome OS obnoví a bude ako nový. O chvíľu ho budete môcť znova používať.

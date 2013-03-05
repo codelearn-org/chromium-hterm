@@ -1,4 +1,8 @@
-Il tuo sistema sta effettuando la transizione alla modalità sviluppatore.
-I dati locali verranno cancellati.
+﻿
+Il sistema sta passando alla Modalità Sviluppatore.
+I dati locali sono stati cancellati.
 
-Per annullare l'operazione, spegni il computer e riporta lo switch sulla modalità normale (verificata).
+Le modifiche apportate al sistema non sono supportate da Google, potrebbero causare
+problemi all'hardware e invalidare la garanzia.
+
+Per annullare, spegni subito il computer.

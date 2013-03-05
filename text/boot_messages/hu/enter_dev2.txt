@@ -1,3 +1,4 @@
+﻿
 Rendszer előkészítése fejlesztői módra.
 Ez eltarthat egy ideig.
-Addig ne kapcsolja ki a számítógépet, amíg újra nem indult.
+Ne kapcsolja ki a számítógépet mielőtt az újraindulna.

@@ -1,3 +1,4 @@
+﻿
 Réinitialisation en cours…
 
-Votre appareil peut être réinitialisé en cas d'erreurs critiques ou à votre initiative. La configuration d'usine de Chrome OS va être rétablie, et votre appareil sera de nouveau fonctionnel dans une minute.
+Votre appareil peut être réinitialisé en cas d'erreurs critiques ou à votre initiative. Chrome OS sera réinitialisé, et vous serez à nouveau opérationnel dans une minute.

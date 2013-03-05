@@ -1,3 +1,4 @@
-Priprava sistema za razvijalski način.
+﻿
+Pripravljanje sistema za razvijalski način.
 To lahko traja nekaj časa.
-Računalnika ne izklapljajte, dokler se ne zažene znova.
+Ne izklopite računalnika, dokler se ne zažene znova.

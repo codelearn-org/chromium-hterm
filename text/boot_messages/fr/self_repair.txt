@@ -1,1 +1,2 @@
-Votre système est en cours d'autoréparation. Veuillez patienter.
+﻿
+Votre système est en cours d'auto-réparation.  Veuillez patienter.

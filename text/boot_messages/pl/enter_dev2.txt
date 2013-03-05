@@ -1,3 +1,4 @@
-Przygotowywanie systemu do trybu programisty.
-To może chwilę potrwać.
-Nie wyłączaj komputera, dopóki nie uruchomi się ponownie.
+﻿
+System jest przygotowywany do działania w trybie programisty.
+Może to chwilę potrwać.
+Nie wyłączaj komputera, zanim sam nie uruchomi się ponownie.

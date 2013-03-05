@@ -1,3 +1,4 @@
+﻿
 Notiek sistēmas sagatavošana izstrādātāja režīmam.
-Tas var ilgt kādu brīdi.
-Neizslēdziet datoru, kamēr tas nav restartējies.
+Tas var ilgt dažas minūtes.
+Neizslēdziet datoru, kamēr tas nav restartēts.

@@ -1,3 +1,4 @@
-Süsteemi ettevalmistamine arendaja režiimi jaoks.
-See võib pisut aega võtta.
+﻿
+Süsteemi valmistatakse ette arendaja režiimi jaoks.
+Selleks võib kuluda natuke aega.
 Ärge lülitage arvutit välja enne, kui see on taaskäivitunud.

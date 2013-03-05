@@ -1,3 +1,4 @@
-Valmistellaan järjestelmää kehittäjätilaan siirtymistä varten.
+﻿
+Järjestelmää valmistellaan kehittäjätilaan.
 Tämä voi kestää hetken.
-Älä katkaise tietokoneen virtaa, ennen kuin se on käynnistynyt uudelleen.
+Älä sammuta tietokonetta ennen kuin se on käynnistynyt uudelleen.

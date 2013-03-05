@@ -1,4 +1,4 @@
 ﻿
 Menyediakan sistem untuk Mod Pembangun.
-Ini mungkin mengambil masa yang agak lama. 
-Jangan matikan komputer anda sehingga ia telah dimulakan semula.
+Proses ini mungkin mengambil sedikit masa.
+Jangan matikan komputer anda sehingga ia dimulakan semula.

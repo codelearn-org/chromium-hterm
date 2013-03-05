@@ -1,3 +1,4 @@
-Inihahanda ang system para sa Mode ng Developer.
-Maaari itong magtagal nang ilang sandali.
-Huwag i-off ang iyong computer hanggang sa nakapag-restart na ito.
+﻿
+Ihinahanda ang system para sa Mode ng Developer.
+Maaari itong magtagal.
+Huwag i-off ang iyong computer hanggang sa makapag-restart ito.

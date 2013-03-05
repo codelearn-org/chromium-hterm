@@ -1,2 +1,3 @@
-Teie süsteem rakendab kriitilist värskendust.
-Palun ärge lülitage süsteemi välja.
+﻿
+Süsteem rakendab olulist värskendust.
+Ärge lülitage seadet välja.

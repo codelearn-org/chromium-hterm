@@ -1,1 +1,2 @@
-Dit system reparerer sig selv.  Vent et øjeblik.
+﻿
+Dit system er ved at reparere sig selv.  Vent lidt.

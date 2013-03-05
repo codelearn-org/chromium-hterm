@@ -1,3 +1,4 @@
+﻿
 Sistem, Geliştirici Modu için hazırlanıyor.
-Bu işlem biraz zaman alabilir.
-Tekrar başlatılana kadar bilgisayarınızı kapatmayın.
+Bu biraz zaman alacaktır.
+Yeniden başlatılana kadar bilgisayarınızı kapatmayın.

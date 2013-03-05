@@ -1,4 +1,8 @@
-Votre système est en cours de transition vers le mode développeur.
-Les données locales seront effacées.
+﻿
+Votre système passe en mode développeur.
+Les données locales ont été effacées.
 
-Pour annuler, éteignez votre ordinateur maintenant, puis rebasculez l'interrupteur du mode développeur vers le mode normal (démarrage vérifié).
+Les modifications non acceptées par Google que vous apportez au système peuvent provoquer
+des problèmes matériels et annuler la garantie.
+
+Pour annuler, éteignez votre ordinateur maintenant.

@@ -1,3 +1,4 @@
-Systemet var i utvecklarläge sist det startades.
-Tillbaka till normalläge (verifierat läge) ...
-Därefter startas systemet om.
+﻿
+Systemet startades senast i utvecklarläget.
+Systemet återgår till normalt (verifierat) läge ...
+När det är klart startas systemet om.

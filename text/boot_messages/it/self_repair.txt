@@ -1,1 +1,2 @@
-Il sistema è in fase di autoriparazione. Attendi.
+﻿
+Il sistema sta effettuando una riparazione automatica.  Attendi.

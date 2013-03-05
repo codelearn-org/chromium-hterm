@@ -1,4 +1,8 @@
-Tu sistema se encuentra en transición al modo de programador.
-Se borrarán los datos locales.
+﻿
+La habilitación del Modo de programador en tu sistema está en curso.
+Se borraron los datos locales.
 
-Para cancelar la transición, apaga tu computadora ahora y vuelve el interruptor de programador al modo (verificado) normal.
+Las modificaciones que realizas en el sistema no son compatibles con Google, pueden causar
+problemas de hardware y dejar sin efecto la garantía.
+
+Para cancelar el proceso, apaga tu computadora ahora.

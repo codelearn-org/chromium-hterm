@@ -1,3 +1,4 @@
-Preparando o sistema para o Modo de desenvolvedor.
-Isso pode demorar um pouco.
-Não desligue o computador até que ele reinicie.
+﻿
+Preparando o sistema para o modo de desenvolvedor.
+Isso pode levar algum tempo.
+Não desligue o computador até que ele seja reiniciado.

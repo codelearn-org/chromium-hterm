@@ -1,3 +1,4 @@
-Systemet ble sist startet i utviklermodus.
+﻿
+Systemet ditt ble sist startet opp i utviklermodus.
 Går tilbake til normal (bekreftet) modus …
-Når Chromebook er tilbake i normal modus, startes systemet opp på nytt.
+Når operasjonen er ferdig, starter systemet på nytt.

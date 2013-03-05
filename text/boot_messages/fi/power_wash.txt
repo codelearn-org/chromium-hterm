@@ -1,3 +1,4 @@
-Tehotyhjennys käynnissä...
+﻿
+Powerwash käynnissä…
 
-Tehotyhjennys suoritetaan, kun havaitaan kriittisiä virheitä tai jos haluat nollata laitteesi. Chrome-käyttöjärjestelmä palautetaan uuden veroiseksi, ja voit jatkaa käyttöä hetken kuluttua.
+Powerwash suoritetaan kriittisten virheiden tai laitteen tyhjennyksen yhteydessä. Se palauttaa Chrome-käyttöjärjestelmän uutta vastaavaan tilaan, minkä jälkeen voit jatkaa käyttöä hetkessä.

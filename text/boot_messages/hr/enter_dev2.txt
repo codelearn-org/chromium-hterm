@@ -1,3 +1,4 @@
-U tijeku je priprema sustava za način rada razvojnog programera.
-To može potrajati malo dulje.
+﻿
+Pripremanje sustava za način rada razvojnog programera.
+To bi moglo potrajati dulje vrijeme.
 Ne isključujte računalo dok se ponovo ne pokrene.

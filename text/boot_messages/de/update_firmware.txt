@@ -1,2 +1,3 @@
+﻿
 Auf Ihrem System wird ein wichtiges Update installiert.
-Schalten Sie den Computer nicht aus.
+Schalten Sie das System nicht aus.

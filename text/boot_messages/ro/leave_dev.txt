@@ -1,3 +1,4 @@
-Sistemul dvs. a pornit în modul pentru dezvoltatori.
-Se revine la modul normal (verificat)...
+﻿
+Sistemul a pornit în Modul pentru dezvoltatori.
+Se revine la Modul normal (verificat)...
 După finalizare, sistemul va reporni.

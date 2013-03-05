@@ -1,3 +1,4 @@
-Sistem Anda terakhir kali melakukan boot dalam Mode Pengembang.
-Mengembalikan ke Mode Normal (Terverifikasi)...
-Setelah selesai, sistem akan reboot.
+﻿
+Booting terakhir sistem Anda dalam Mode Pengembang.
+Mengembalikan ke Mode Normal (Terverifikasi)... 
+Setelah selesai, sistem akan melakukan reboot.

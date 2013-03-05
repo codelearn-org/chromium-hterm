@@ -1,3 +1,4 @@
-Jūsu sistēma pēdējo reizi tika sāknēta izstrādātāja režīmā.
-Notiek pārslēgšanās uz normālo (verificēto) režīmu...
-Pēc pabeigšanas sistēma tiks atsāknēta.
+﻿
+Pēdējoreiz sistēma tika sāknēta izstrādātāja režīmā.
+Notiek atgriešanās parastajā (pārbaudītajā) režīmā...
+Kad process tiks pabeigts, sistēma tiks atsāknēta.

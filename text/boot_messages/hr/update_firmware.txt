@@ -1,2 +1,3 @@
-Sustav primjenjuje kritično ažuriranje.
+﻿
+Vaš sustav primjenjuje kritično ažuriranje.
 Ne isključujte ga.

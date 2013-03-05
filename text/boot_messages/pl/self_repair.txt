@@ -1,1 +1,2 @@
-System jest naprawiany.  Czekaj.
+﻿
+System naprawia się.  Zaczekaj.

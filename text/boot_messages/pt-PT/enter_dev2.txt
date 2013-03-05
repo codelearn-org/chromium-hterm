@@ -1,3 +1,4 @@
+﻿
 A preparar o sistema para o Modo de Programador.
-Isto poderá demorar algum tempo.
+Isto demorar algum tempo.
 Não desligue o computador até reiniciar.

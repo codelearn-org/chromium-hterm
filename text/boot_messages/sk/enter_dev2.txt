@@ -1,3 +1,4 @@
-Systém sa pripravuje na režim vývojára.
+﻿
+Systém sa pripravuje na prechod do režimu vývojára.
 Môže to chvíľu trvať.
-Nevypínajte počítač, kým sa nereštartuje.
+Nevypínajte počítač, pokým sa nereštartuje.

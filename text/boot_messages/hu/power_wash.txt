@@ -1,3 +1,4 @@
+﻿
 Teljes törlés folyamatban...
 
-Kritikus hiba vagy az eszköz alaphelyzetbe állítása esetén teljes törlés történhet. Ez visszaállítja a Chrome OS-t eredeti állapotába, és egy perc múlva újra használhatja.
+Kritikus hiba vagy az eszköz alaphelyzetbe állítása esetén teljes törlés történhet. Ezzel olyan állapotra állítja vissza a Chrome OS-t, mintha az teljesen új lenne, és néhány perc múlva már dolgozhat is tovább.

@@ -1,2 +1,3 @@
-Tu sistema está aplicando una actualización crítica.
-No lo apagues.
+﻿
+Tu sistema está instalando una actualización importante.
+No apagues el dispositivo.

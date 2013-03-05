@@ -1,3 +1,4 @@
-Poništavanje u tijeku...
+﻿
+Powerwash je u tijeku...
 
-Poništavanje se aktivira kada se otkriju kritične pogreške ili kada vratite uređaj na izvorne postavke. OS Chrome bit će kao nov, a vi ćete opet moći raditi za koji trenutak.
+Powerwash se aktivira kada se otkriju kritične pogreške ili kada vratite uređaj na izvorne postavke. OS Chrome vratit će se u izvorno stanje, a vi ćete opet moći raditi za koji trenutak.

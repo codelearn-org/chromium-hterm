@@ -1,1 +1,2 @@
-Systemet repareras.  Vänta.
+﻿
+Systemet genomför en självreparation.  Vänta.

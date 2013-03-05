@@ -1,4 +1,9 @@
-Jūsu sistēma pāriet uz izstrādātāja režīmu.
+﻿
+Notiek sistēmas pārslēgšana uz izstrādātāja režīmu.
 Lokālie dati tiks dzēsti.
 
-Lai atceltu, tagad izslēdziet datoru un pārvietojiet izstrādātāja režīma slēdzi atpakaļ, tādējādi atjaunojot normālo (verificēto) režīmu.
+Sistēmas modifikācijas, ko neatbalsta uzņēmums Google, var radīt
+aparatūras problēmas un anulēt garantiju.
+
+Lai atceltu, tūlīt izslēdziet datoru un pārslēdzieties no izstrādātāja režīma uz
+pārbaudīto režīmu.

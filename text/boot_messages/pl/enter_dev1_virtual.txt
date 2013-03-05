@@ -1,4 +1,8 @@
-System przechodzi w tryb programisty.
-Dane lokalne zostaną wyczyszczone.
+﻿
+Twój system przechodzi teraz w tryb programisty.
+Dane lokalne zostały wyczyszczone.
 
-Aby anulować, wyłącz komputer i przesuń przełącznik trybu programisty z powrotem na tryb normalny (zweryfikowany).
+Modyfikacje, które wprowadzisz w systemie, nie są obsługiwane przez Google, mogą
+powodować problemy sprzętowe i unieważnić gwarancję.
+
+Aby anulować, wyłącz teraz komputer.

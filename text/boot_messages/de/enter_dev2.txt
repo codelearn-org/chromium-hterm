@@ -1,3 +1,4 @@
-Das System wird für den Entwicklermodus vorbereitet.
-Das kann etwas dauern.
-Schalten Sie Ihren Computer erst aus, nachdem er neu gestartet wurde.
+﻿
+Das System wird auf den Entwicklermodus vorbereitet.
+Dieser Vorgang kann einen Moment dauern.
+Schalten Sie den Computer nicht aus, bevor das System neu gestartet wurde.

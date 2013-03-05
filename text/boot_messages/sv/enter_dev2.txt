@@ -1,3 +1,4 @@
-Systemet förbereds för utvecklarläge.
-Det kan ta en liten stund ...
-Stäng inte av datorn innan den har startat om.
+﻿
+Systemet förbereds för utvecklarläget.
+Detta kan ta en stund.
+Stäng inte av datorn förrän den har startats om.

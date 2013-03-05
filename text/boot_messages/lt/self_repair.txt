@@ -1,1 +1,2 @@
-Sistema taiso klaidas. Palaukite.
+﻿
+Sistema automatiškai taisoma.  Palaukite.

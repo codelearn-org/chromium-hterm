@@ -1,3 +1,4 @@
-Limpieza en curso...
+﻿
+Powerwash en curso...
 
-La limpieza se realiza cuando se detectan errores críticos o cuando decides restablecer tu dispositivo. El Sistema operativo de Chrome se restablecerá y quedará como nuevo. Tu dispositivo volverá a entrar en funcionamiento en solo un minuto.
+Este restablecimiento de la configuración de fábrica se realiza cuando se detectan errores graves o cuando eliges restablecer tu dispositivo. El Sistema operativo de Chrome quedará como nuevo y podrás volver a usar tu dispositivo en solo un minuto.

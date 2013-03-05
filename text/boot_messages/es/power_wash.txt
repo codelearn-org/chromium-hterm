@@ -1,3 +1,4 @@
+﻿
 Limpieza en curso...
 
-Las limpiezas se producen cuando se detectan errores críticos o cuando decides restablecer tu dispositivo. Esta función restablecerá los datos de fábrica de Chrome OS y podrás volver a utilizar el dispositivo en tan solo un minuto.
+Las limpiezas se producen cuando se detectan errores críticos o cuando decides restablecer tu dispositivo. Chrome OS volverá a su estado de fábrica y podrás volver a usar el dispositivo en un minuto.

@@ -1,3 +1,4 @@
-Notiek īpašā tīrīšana...
+﻿
+Pašlaik darbojas funkcija Powerwash...
 
-Īpašā tīrīšana tiek veikta, kad tiek atklātas kritiskas kļūdas vai izvēlaties atiestatīt ierīci. Operētājsistēma Chrome OS tiks atiestatīta un būs gluži kā jauna, un jūs varēsiet to atkal lietot pēc neilga mirkļa.
+Funkcija Powerwash tiek aktivizēta, ja tiek atklātas kritiskas kļūdas vai ja izvēlaties atiestatīt ierīci. Šādi operētājsistēma Chrome OS tiks atiestatīta, un pēc brīža varēsiet turpināt darbu.

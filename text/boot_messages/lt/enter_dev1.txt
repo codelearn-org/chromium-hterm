@@ -1,5 +1,9 @@
-Sistema pereina į kūrėjo režimą.
+﻿
+Sistemoje pereinama prie kūrėjo režimo.
 Vietiniai duomenys bus išvalyti.
 
-Jei norite atšaukti, dabar išjunkite kompiuterį ir
-kūrėjo jungiklį perjunkite į įprastą (patvirtintą) režimą.
+„Google“ nepalaiko savarankiškai atliekamų sistemos pakeitimų. Dėl to gali kilti
+aparatinės įrangos problemų ir gali būti panaikinta garantija.
+
+Jei norite atšaukti, išjunkite kompiuterį dabar ir perjunkite kūrėjo jungiklį atgal į
+patvirtintą režimą.

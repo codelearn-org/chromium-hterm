@@ -1,3 +1,4 @@
+﻿
 Ihr System wurde zuletzt im Entwicklermodus gestartet.
 Das System kehrt zum normalen (verifizierten) Modus zurück...
-Nach Abschluss des Vorgangs wird das System neu gestartet.
+Anschließend wird das System neu gestartet.

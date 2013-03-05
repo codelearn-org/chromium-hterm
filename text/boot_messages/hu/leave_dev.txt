@@ -1,3 +1,4 @@
-A legutóbbi rendszerindítás fejlesztői módban történt.
-Visszatérés normál (ellenőrzött) módba...
-Ennek végeztével a rendszer újraindul.
+﻿
+A rendszer legutóbb fejlesztő módban indult el.
+Visszatérés a normál (ellenőrzött) módra...
+A folyamat befejeztével a rendszer újraindul.

@@ -1,2 +1,3 @@
+﻿
 Sistem Anda menerapkan pembaruan kritis.
-Jangan dimatikan.
+Jangan matikan sistem.

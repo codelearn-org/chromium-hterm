@@ -1,3 +1,4 @@
+﻿
 Menyiapkan sistem untuk Mode Pengembang.
-Mungkin agak lama.
-Jangan mematikan komputer Anda hingga komputer dimulai ulang.
+Tindakan ini mungkin memakan waktu beberapa lama.
+Jangan mematikan komputer hingga komputer dimulai ulang.

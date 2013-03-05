@@ -1,3 +1,4 @@
-Vyksta visiško atkūrimo procesas...
+﻿
+Vykdoma „Powerwash“...
 
-Visiško atkūrimo procesas pradedamas, kai aptinkama kritinių klaidų arba kai pasirenkate atkurti savo įrenginį. Taip „Chrome“ OS bus atkurta, kad būtų kaip nauja, ir jūs iškart galėsite ją naudoti.
+„Powerwash“ įjungiama, kai aptinkama svarbių klaidų arba kai pasirenkate nustatyti įrenginį iš naujo. Tai atlikus „Chrome“ OS bus nustatyta iš naujo ir po minutės vėl galėsite ją naudoti.

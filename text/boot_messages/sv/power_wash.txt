@@ -1,3 +1,4 @@
-Återställningen pågår ...
+﻿
+En återställning med hjälp av Powerwash pågår ...
 
-Återställningar sker när allvarliga fel upptäcks eller när du återställer enheten. Chrome OS återställs nu, och du kan använda enheten igen om en liten stund.
+Återställningar med hjälp av Powerwash sker när allvarliga fel upptäcks eller när enheten återställs. Chrome OS återställs nu, och du kan använda enheten igen om en liten stund.

@@ -1,3 +1,4 @@
-Váš systém byl naposledy spuštěn v režimu pro vývojáře.
+﻿
+Systém byl naposledy spuštěn v režimu pro vývojáře.
 Návrat do normálního (ověřeného) režimu...
 Po dokončení se systém restartuje.

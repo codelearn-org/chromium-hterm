@@ -1,2 +1,3 @@
-Il sistema sta eseguendo un importante aggiornamento.
-Non spegnerlo.
+﻿
+Il sistema sta applicando un aggiornamento importante.
+Non spegnere.

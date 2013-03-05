@@ -1,3 +1,4 @@
+﻿
 S'està preparant el sistema per al mode desenvolupador.
-Això pot trigar un moment.
-No apagueu l'equip fins que no s'hagi reiniciat.
+Aquest procés pot trigar una mica.
+No apagueu l'ordinador fins que no es reiniciï.

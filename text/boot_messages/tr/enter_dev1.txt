@@ -1,4 +1,9 @@
-Sisteminiz Geliştirici Moduna geçiyor.
-Yerel veriler silinecek.
+﻿
+Sisteminiz Geliştirici Modu'na geçiriliyor.
+Yerel veriler silinecektir.
 
-İptal etmek için bilgisayarınızı şimdi kapatın ve geliştirici düğmesini tekrar Normal (Doğrulanmış) Moda getirin.
+Sisteminizde yaptığınız değişiklikler Google tarafından desteklenmiyor;
+donanım sorularına veya garantinin geçersiz olmasına neden olabilir.
+
+İptal etmek için, bilgisayarınızı şimdi kapatın ve Geliştirici Anahtarını tekrar
+Doğrulanmış Moda getirin.
