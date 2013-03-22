@@ -79,8 +79,9 @@ chrome.webNavigation.onCommitted.addListener(function(e) {
   });
 
   setIcon(e.tabId);
-}, {url: [{hostEquals: 'code.google.com'},
-          {pathPrefix: '/p/'}]});
+}, {url: [{hostEquals: 'code.google.com',
+           pathPrefix: '/p/'},
+          {hostEquals: 'thebugsof.googleplex.com'}]});
 
 chrome.alarms.onAlarm.addListener(function(alarm) {
   var tabId = alarmNameToTabId(alarm.name);
