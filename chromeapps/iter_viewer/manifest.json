@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "minimum_chrome_version": "22",
   "name": "Chromium OS Iteration Viewer",
-  "version": "3.0",
+  "version": "3.1",
   "description": "Shows the current Chromium OS Iteration when looking at the issue tracker.",
   "icons": {
     "128": "icon-128x128.png"

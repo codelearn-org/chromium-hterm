@@ -3,30 +3,33 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-ver=${1#v}
-rev=${2:-0}
-if [[ -z ${ver} ]] ; then
-  cat <<-EOF
-Usage: makedist.sh <ver> [rev]
+cd "${0%/*}"
 
-The ver should be a git tag.
+rev=${1:-0}
+if [[ $# -ne 1 || -n ${1//[0-9]} ]] ; then
+  cat <<-EOF
+Usage: makedist.sh <rev>
+
+The ver will be taken from manifest.json.
 
 The rev should be an integer.
 
 Example:
- ./makedist.sh 3.0 1
-This will generate a manifest for version 3.0.1 from the git tag v3.0
+ ./makedist.sh 1
+This will generate a manifest for version 3.0.1 (when version is '3.0'
+in the manifest.json file)
 EOF
+  exit 0
 fi
-gtag="v${ver}"
 
+ver=$(sed -nr '/"version"/s:.*"(.*)",$:\1:p' manifest.json)
 PN="cros-iter-viewer"
 PV="${ver}.${rev}"
 P="${PN}-${PV}"
 
 rm -rf ${P}
 mkdir ${P}
-git archive --prefix=${P}/ ${gtag} | tar xf -
+git archive HEAD | tar xf - -C ${P}
 sed -i \
   -e '/"version"/s:"[^"]*",:"'${PV}'",:' \
   ${P}/manifest.json
