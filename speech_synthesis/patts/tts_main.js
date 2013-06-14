@@ -4,6 +4,20 @@
 
 /**
  * @fileoverview Google Text-to-speech component extension for Chrome OS.
+ *
+ * The metadata about the voices to load is contained in two places:
+ *
+ * 1. The manifest file defines the voices that are actually exposed to
+ *    the end-user, including the exposed name of each voice. It also
+ *    specifies which voice data scripts to load.
+ *
+ * 2. Each voice has an associated data script, named voice_data_*.js.
+ *    When run, each file adds one or more entries to the global
+ *    variable window.voices.
+ *
+ * The advantage of this design is that temporarily disabling a new
+ * voice can be done just by modifying manifest.json, it doesn't require
+ * editing any other source files.
  */
 
 'use strict';
@@ -13,70 +27,177 @@ var TtsController = function() {
   this.utteranceId = 0;
   this.nativeTts = null;
   this.initialized = false;
-  this.startTime;
+  this.startTime = undefined;
   this.timeouts = [];
   this.voice = null;
-  this.lang = 'en-US';
+  this.lang = '';
+  this.voiceName = '';
   this.pendingSpeechRequest = null;
 };
 
 TtsController.prototype.run = function() {
   document.addEventListener('unload', this.unload, false);
-  this.loadLastUsedVoice();
-  this.createNativeTts();
+  this.getVoiceNamesFromManifest(function() {
+    this.loadLastUsedVoice();
+    this.createNativeTts();
+    chrome.ttsEngine.onSpeak.addListener(this.onSpeak.bind(this));
+    chrome.ttsEngine.onStop.addListener(this.onStop.bind(this));
+  });
+};
 
-  chrome.ttsEngine.onSpeak.addListener(this.onSpeak.bind(this));
-  chrome.ttsEngine.onStop.addListener(this.onStop.bind(this));
+TtsController.prototype.getVoiceNamesFromManifest = function(completion) {
+  var self = this;
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    var manifest = JSON.parse(this.responseText);
+    var manifestVoices = manifest.tts_engine.voices;
+    var langGenderMap = {};
+    for (var i = 0; i < manifestVoices.length; i++) {
+      langGenderMap[manifestVoices[i].lang + '-' + manifestVoices[i].gender] =
+          manifestVoices[i].voice_name;
+    }
+    for (var i = 0; i < window.voices.length; i++) {
+      window.voices[i].voiceName =
+          langGenderMap[window.voices[i].lang + '-' + window.voices[i].gender];
+    }
+    (completion.bind(self))();
+  };
+  xhr.open('get', chrome.extension.getURL('manifest.json'), true);
+  xhr.send();
 };
 
 TtsController.prototype.loadLastUsedVoice = function() {
-  var lang = localStorage['lastUsedLang'];
-  if (!lang)
-    lang = '';
-  this.voice = this.findBestMatchingVoiceMultiplePasses(lang);
+  var lang = localStorage['lastUsedLang'] || navigator.language;
+  var gender = localStorage['lastUsedGender'] || '';
+  var voiceName = localStorage['lastUsedVoiceName'];
+  if (voiceName) {
+    for (var i = 0; i < window.voices.length; i++) {
+      if (window.voices[i].voiceName == voiceName) {
+        this.voice = window.voices[i];
+      }
+    }
+  }
+  if (!this.voice) {
+    this.voice = this.findBestMatchingVoiceMultiplePasses(lang, gender);
+  }
   this.lang = this.voice.lang;
+  this.gender = this.voice.gender;
+  this.voiceName = this.voice.voiceName;
 };
 
-TtsController.prototype.findBestMatchingVoiceMultiplePasses = function(lang) {
+TtsController.prototype.findBestMatchingVoiceMultiplePasses = function(lang, gender) {
   // Exact match (speak 'xx-YY' matches lang 'xx-YY')
-  var voice = this.findBestMatchingVoice(lang, false);
-  if (voice)
+  var voice = this.findBestMatchingVoice(lang, gender, false);
+  if (voice) {
     return voice;
+  }
 
   // Prefix match (speak 'xx' matches lang 'xx-YY')
-  voice = this.findBestMatchingVoice(lang, true);
-  if (voice)
+  voice = this.findBestMatchingVoice(lang, gender, true);
+  if (voice) {
     return voice;
+  }
 
   // Match first two letters only (speak 'xx-ZZ' matches lang 'xx-YY')
-  voice = this.findBestMatchingVoice(lang.substr(0, 2), true);
-  if (voice)
+  voice = this.findBestMatchingVoice(lang.substr(0, 2), gender, true);
+  if (voice) {
     return voice;
+  }
 
-  // If all else fails, try the first matching English voice.
-  voice = this.findBestMatchingVoice('en', true);
-  if (voice)
+  // Match first two letters only, and ignore the gender.
+  voice = this.findBestMatchingVoice(lang.substr(0, 2), '', true);
+  if (voice) {
     return voice;
+  }
 
   // If all else fails, return the first voice.
-  return this.findBestMatchingVoice('', true);
+  return this.findBestMatchingVoice('', '', true);
 };
 
-TtsController.prototype.findBestMatchingVoice = function(lang, prefixOnly) {
+TtsController.prototype.findBestMatchingVoice = function(
+    lang, gender, prefixOnly) {
   for (var i = 0; i < window.voices.length; i++) {
     var voice = window.voices[i];
-    if (voice.lang == lang)
+    if (gender != '' && voice.gender != '' && gender != voice.gender) {
+      continue;
+    }
+    if (voice.lang == lang) {
       return voice;
-    if (prefixOnly && voice.lang.substr(0, lang.length) == lang)
+    }
+    if (prefixOnly && voice.lang.substr(0, lang.length) == lang) {
       return voice;
+    }
   }
   return null;
 };
 
+TtsController.prototype.switchVoiceIfNeeded = function(
+    voiceName, lang, gender) {
+  var voice = null;
+  if (voiceName) {
+    for (var i = 0; i < window.voices.length; i++) {
+      if (window.voices[i].voiceName == voiceName) {
+        voice = window.voices[i];
+      }
+    }
+  }
+  if (!lang) {
+    lang = '';
+  }
+  if (!gender) {
+    gender = '';
+  }
+
+  if (!voice && (lang || gender)) {
+    // First check if the current voice is a valid match - if so, stick with
+    // the current voice. The purpose of this code is so that, for example,
+    // if one utterance wants 'en-GB' and a British voice is loaded, and
+    // the next utterance just wants 'en', it doesn't switch to an American
+    // voice, but rather stays with the loaded British voice.
+    if (!gender || !this.gender || gender == this.gender) {
+      if (!lang || lang == this.lang) {
+        // It's an exact match.
+        voice = this.voice;
+      } else {
+        if (this.lang.substr(0, lang.length) == lang &&
+            this.findBestMatchingVoice(lang, gender, false) == null) {
+          // It's a partial language match AND there's no better match.
+          voice = this.voice;
+        }
+      }
+    }
+
+    // Otherwise, look for the best matching voice.
+    if (!voice) {
+      voice = this.findBestMatchingVoiceMultiplePasses(lang, gender);
+    }
+  }
+
+  if (voice && voice.voiceName != this.voiceName) {
+    console.log('Switching to voice: ' + voice.voiceName);
+    localStorage['lastUsedLang'] = voice.lang;
+    localStorage['lastUsedGender'] = voice.gender;
+    localStorage['lastUsedVoiceName'] = voice.voiceName;
+    this.nativeTts.removeEventListener(
+        'message', this.handleMessageCallback, false);
+    this.unload();
+    this.nativeTts.parentElement.removeChild(this.nativeTts);
+    this.nativeTts = null;
+    this.initialized = false;
+    this.voice = voice;
+    this.lang = voice.lang;
+    this.gender = voice.gender;
+    this.voiceName = voice.voiceName;
+    this.createNativeTts();
+    return true;
+  }
+
+  return false;
+};
+
 TtsController.prototype.createNativeTts = function() {
-  console.log('createNativeTts');
   var embed = document.createElement('embed');
-  embed.setAttribute('id', this.lang);
+  embed.setAttribute('id', 'tts');
   embed.setAttribute('name', 'nacl_module');
   embed.setAttribute('src', 'tts_service.nmf');
   embed.setAttribute('type', 'application/x-nacl');
@@ -97,45 +218,26 @@ TtsController.prototype.escapePluginArg = function(str) {
 };
 
 TtsController.prototype.onStop = function() {
-  console.log('Handling stop');
-  if (!this.initialized) {
-    this.pendingSpeechRequest = null;
-    return;
-  }
-
+  this.pendingSpeechRequest = null;
   delete this.callbackMap[this.utteranceId];
   this.clearTimeouts();
   this.nativeTts.postMessage('stop');
 };
 
 TtsController.prototype.onSpeak = function(utterance, options, callback) {
-  console.log('Will speak: "' + utterance + '"');
+  console.log('Will speak: "' + utterance + '" lang="' + options.lang + '"');
 
-  if (!this.initialized) {
-    console.log('Pending');
-    this.pendingSpeechRequest = [utterance, options, callback];
+  if (this.nativeTts && !this.initialized) {
+    if (!this.pendingSpeechRequest) {
+      this.pendingSpeechRequest = [utterance, options, callback];
+    }
     return;
   }
 
-  if (options.lang) {
-    var voice = this.findBestMatchingVoiceMultiplePasses(options.lang);
-    console.log('Matching lang: ' + voice.lang + ', this lang: ' + this.lang);
-    if (voice.lang != this.lang) {
-      console.log('Switching to language: ' + voice.lang);
-      localStorage['lastUsedLang'] = voice.lang;
-      console.log('Removing event listener for ' + this.nativeTts.id);
-      this.nativeTts.removeEventListener(
-          'message', this.handleMessageCallback, false);
-      this.unload();
-      this.nativeTts.parentElement.removeChild(this.nativeTts);
-      this.nativeTts = null;
-      this.initialized = false;
-      this.pendingSpeechRequest = [utterance, options, callback];
-      this.voice = voice;
-      this.lang = voice.lang;
-      this.createNativeTts();
-      return;
-    }
+  if (this.switchVoiceIfNeeded(
+      options.voiceName, options.lang, options.gender)) {
+    this.pendingSpeechRequest = [utterance, options, callback];
+    return;
   }
 
   this.onStop();

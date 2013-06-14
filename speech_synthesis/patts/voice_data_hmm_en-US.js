@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Chromium OS Authors. All rights reserved.
+// Copyright (c) 2013 The Chromium OS Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -9,6 +9,7 @@
 
 // Initialize the voice array if it doesn't exist so that voice data files
 // can be loaded in any order.
+
 if (!window.voices) {
   window.voices = [];
 }
@@ -19,6 +20,7 @@ window.voices.push({
   'prefix': '',
   'cacheToDisk': false,
   'lang': 'en-US',
+  'gender': 'female',
   'removePaths': [],
   'files': [
     {
@@ -52,9 +54,7 @@ window.voices.push({
       'size': 626499,
     },
     {
-      'path': '/voice_data_hmm_en-US/' +
-              'sfg_16000_16bit_hmm_ph_hmm_en-US_swift_cDEV-' +
-              'xavigonzalvo_d1346428136000000_sfg_5000.voice',
+      'path': '/voice_data_hmm_en-US/sfg_16000_16bit_hmm_ph_hmm_en-US_swift_cDEV-xavigonzalvo_d1346428136000000_sfg_5000.voice',
       'url': '',
       'md5sum': '0e97dd98f1556f39c8ef582b21c693ef',
       'size': 1073226,
@@ -66,16 +66,16 @@ window.voices.push({
       'size': 166722,
     },
     {
-      'path': '/voice_data_hmm_en-US/en.blex',
+      'path': '/voice_data_hmm_en-US/us_only.blex',
       'url': '',
-      'md5sum': 'c739c4884897cb392cda667665d363fc',
-      'size': 5807953,
+      'md5sum': 'ab31d59550ba7f4fc1e2003643b8ff68',
+      'size': 732716,
     },
     {
       'path': '/voice_data_hmm_en-US/project',
       'url': '',
-      'md5sum': 'c395f6e3ad1ba8e3329bf30b633232d6',
-      'size': 653,
+      'md5sum': '6391eddfc185abff681a884423e23c75',
+      'size': 686,
     },
   ],
 });

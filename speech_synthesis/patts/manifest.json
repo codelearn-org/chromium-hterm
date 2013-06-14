@@ -1,11 +1,16 @@
 {
   "name": "Chrome OS text-to-speech component extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Chrome OS native text-to-speech implemented using native client.",
   "manifest_version": 2,
   "background": {
     "scripts": [
+      "voice_data_hmm_de-DE.js",
+      "voice_data_hmm_en-GB.js",
       "voice_data_hmm_en-US.js",
+      "voice_data_hmm_es-ES.js",
+      "voice_data_hmm_fr-FR.js",
+      "voice_data_hmm_it-IT.js",
       "tts_main.js"
     ]
   },
@@ -16,8 +21,50 @@
   "tts_engine": {
     "voices": [
       {
-        "voice_name": "Chrome OS US English Voice",
+        "voice_name": "Chrome OS French",
+        "lang": "fr-FR",
+        "gender": "female",
+        "event_types": [ "start", "word", "end", "error" ]
+      },
+      {
+        "voice_name": "Chrome OS German",
+        "lang": "de-DE",
+        "gender": "female",
+        "event_types": [ "start", "word", "end", "error" ]
+      },
+      {
+        "voice_name": "Chrome OS Italian",
+        "lang": "it-IT",
+        "gender": "female",
+        "event_types": [ "start", "word", "end", "error" ]
+      },
+      {
+        "voice_name": "Chrome OS US English Female",
         "lang": "en-US",
+        "gender": "female",
+        "event_types": [ "start", "word", "end", "error" ]
+      },
+      {
+        "voice_name": "Chrome OS US English Male",
+        "lang": "en-US",
+        "gender": "male",
+        "event_types": [ "start", "word", "end", "error" ]
+      },
+      {
+        "voice_name": "Chrome OS British English Female",
+        "lang": "en-GB",
+        "gender": "female",
+        "event_types": [ "start", "word", "end", "error" ]
+      },
+      {
+        "voice_name": "Chrome OS British English Male",
+        "lang": "en-GB",
+        "gender": "male",
+        "event_types": [ "start", "word", "end", "error" ]
+      },
+      {
+        "voice_name": "Chrome OS Spanish",
+        "lang": "es-ES",
         "gender": "female",
         "event_types": [ "start", "word", "end", "error" ]
       }
