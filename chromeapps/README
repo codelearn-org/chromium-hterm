@@ -1,3 +1,12 @@
 This directory contains extensions and apps for Chromium which are not included
 by default in Chromium or ChromiumOS.  They may be available from the public
 app store, or through other means.
+
+Note for BSD and OS X users:
+
+The scripts in this tree use the -f option with the readline utility. This
+option isn't POSIX and isn't supported in the stock readline implementations on
+either BSD or OS X. There is a work around readline script in the libdot/bin
+directory that works on these platforms. If the readline on your system doesn't
+support -f, then you'll need to put this alternate readline somewhere earlier in
+your PATH before running the scripts here.
